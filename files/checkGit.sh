@@ -4,7 +4,7 @@ curl -k -u $TL_USER:$TL_PASS -H 'Content-Type: application/json' -X POST https:/
 sleep 5
 REPOOUTPUT=$(curl -k -u $TL_USER:$TL_PASS \
   -H 'Content-Type: application/json' \
-  https://$TL_CONSOLE/api/v1/coderepos?id=pasqua1e%2Fevil.petclinic&limit=15&offset=0&project=Central+Console&reverse=true&sort=vulnerabilityRiskScore)
+  https://$TL_CONSOLE/api/v1/coderepos?id=mkhammash%2Fevil.petclinic&limit=15&offset=0&project=Central+Console&reverse=true&sort=vulnerabilityRiskScore)
 
 #sed -n -e 's/^.*\(vulnerabilitiesCount\)/\1/p' | cut -f1 -d, | cut -f2- -d: > output.txt 
 VULN=$(echo $REPOOUTPUT | sed -n -e 's/^.*\(vulnerabilitiesCount\)/\1/p' | cut -f1 -d, | cut -f2- -d:)
